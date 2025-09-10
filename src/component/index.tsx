@@ -8,26 +8,24 @@ export default class Index extends React.Component {
     render(): React.ReactNode {
         return <>
             <GContext.Provider value={
-                (() => {
-                    return class Dynamic extends React.Component<{}, {}> {
-                        state: any = {
-                            time: undefined
-                        };
-                        getTime() {
-                            let date = new Date();
-                            return `${date.getFullYear()}年${date.getMonth()}月${date.getDay()}日${date.getHours()}时${date.getMinutes()}分${date.getSeconds()}秒`;
-                        }
-
-                        componentDidMount(): void {
-                            setInterval(() => {
-                                this.setState({ time: this.getTime() });
-                            }, 1000);
-                        }
-                        render(): React.ReactNode {
-                            return <>{this.state.time}</>
-                        }
+                class Dynamic extends React.Component<{}, {}> {
+                    state: any = {
+                        time: undefined
+                    };
+                    getTime() {
+                        let date = new Date();
+                        return `${date.getFullYear()}年${date.getMonth()}月${date.getDay()}日${date.getHours()}时${date.getMinutes()}分${date.getSeconds()}秒`;
                     }
-                })()
+
+                    componentDidMount(): void {
+                        setInterval(() => {
+                            this.setState({ time: this.getTime() });
+                        }, 1000);
+                    }
+                    render(): React.ReactNode {
+                        return <>{this.state.time}</>
+                    }
+                }
             }>
                 <BrowserRouter>
                     <Routes>
