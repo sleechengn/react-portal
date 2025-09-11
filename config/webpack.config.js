@@ -1,4 +1,5 @@
 const path = require('path');
+const config = require('./config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,21 +11,21 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, '../build'),
-        publicPath: '/'
+        path: path.join(__filename, "../build"),
+        publicPath: config.base
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: [{loader: 'ts-loader'}]
+                use: [{ loader: 'ts-loader' }]
             }
         ]
     },
     devServer: {
         port: 7000,
-        static:{
-            directory: path.join(__dirname, '../build/'),
+        static: {
+            directory: path.join(__dirname, "../build"),
         },
         host: "0.0.0.0",
         compress: true,
@@ -37,8 +38,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            output:path.join(__filename,"../build/index.html"),
-            template:path.relative(__filename,"../src/index.html")
+            output: path.join(__filename, "../build/index.html"),
+            template: path.relative(__filename, "../src/index.html")
         })
     ]
 };

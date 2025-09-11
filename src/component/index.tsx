@@ -1,7 +1,9 @@
 import * as React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import * as config from "../../config/config.js";
 
 const GContext = React.createContext<any>(null);
+console.log(config.base);
 
 export default class Index extends React.Component {
 
@@ -35,7 +37,7 @@ export default class Index extends React.Component {
             }>
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<div style={{ background: "#cccccc", textAlign: "center" }}>
+                        <Route path={`${config.routeBase}`} element={<div style={{ background: "#cccccc", textAlign: "center" }}>
                             <GContext.Consumer>{VComponent => {
                                 return <>
                                     <h2>首页</h2>
@@ -43,7 +45,7 @@ export default class Index extends React.Component {
                                 </>
                             }}</GContext.Consumer>
                         </div>} />
-                        <Route path="/about" element={<div style={{ background: "#cccccc", textAlign: "center" }}>
+                        <Route path={`${config.routeBase}/about`} element={<div style={{ background: "#cccccc", textAlign: "center" }}>
                             <GContext.Consumer>{VComponent => {
                                 return <>
                                     <h2>静态网站模板</h2>
