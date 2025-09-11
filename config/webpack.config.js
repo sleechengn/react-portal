@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.join(__filename, "../build"),
+        path: path.join(__dirname, "../build"),
         publicPath: config.base
     },
     module: {
@@ -38,8 +38,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            output: path.join(__filename, "../build/index.html"),
-            template: path.relative(__filename, "../src/index.html")
+            output: path.join(__dirname, "../build/index.html"),
+            template: path.join(__dirname, "../src/index.html")
         })
     ]
 };
