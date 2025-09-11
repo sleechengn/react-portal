@@ -12,7 +12,6 @@ class About extends React.Component<any, any> {
 
     render(): React.ReactNode {
         const { TimerLabel } = this.props;
-        console.log(`组件：`, TimerLabel);
         return <>
             <div style={{ textAlign: "center", background: "#888888" }}>
                 <h2>关于</h2>

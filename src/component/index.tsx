@@ -6,7 +6,6 @@ import * as bus from "../../config/bus.js";
 import { TimerLabel } from "./fragment/TimerLabel";
 import About from "./about";
 
-
 console.log(config.base);
 
 export default class Index extends React.Component {

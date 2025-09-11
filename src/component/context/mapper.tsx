@@ -8,7 +8,6 @@ export default function (RComponent: any) {
                 <GlobalContext.Consumer>
                     {
                         context => {
-                            console.log(context);
                             return <>
                                 <RComponent {...this.props} {...context} />
                             </>;
