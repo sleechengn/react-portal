@@ -1,7 +1,7 @@
 import * as React from "react";
 import mapper from "../context/mapper";
 
-class About extends React.Component<any, any> {
+class About extends React.Component<{ TimerLabel: React.ComponentClass }, {}> {
 
     constructor(props: any) {
         super(props);
@@ -22,4 +22,4 @@ class About extends React.Component<any, any> {
         </>
     }
 }
-export default mapper(About);
+export default mapper("ABOUT", About);
